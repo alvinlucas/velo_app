@@ -43,9 +43,9 @@ public ResponseEntity<Optional<Station>> getPersoneById(@PathVariable Integer id
 }
 
 @PostMapping("station/add")
-public ResponseEntity<Station> add(@RequestParam String adress,@RequestParam String name,@RequestParam String lattitude,@RequestParam String address,@RequestParam Double latitude,@RequestParam Double longitude, @RequestParam String status, @RequestParam Integer bike_stands, @RequestParam Integer available_bike_stands, @RequestParam Integer available_bikes, @RequestParam String recordid){
+public ResponseEntity<Station> add(@RequestParam String address,@RequestParam String name,@RequestParam String lattitude,@RequestParam Double latitude,@RequestParam Double longitude, @RequestParam String status, @RequestParam Integer bike_stands, @RequestParam Integer available_bike_stands, @RequestParam Integer available_bikes, @RequestParam String recordid){
 
-    Station station = stationService.save(Station.builder().adress(adress).name(name).latitude(latitude).longitude(longitude).status(status).bikeStands(bike_stands).availableBikeStands(available_bike_stands).availableBikes(available_bikes).recordId(recordid).build());
+    Station station = stationService.save(Station.builder().address(address).name(name).latitude(latitude).longitude(longitude).status(status).bikeStands(bike_stands).availableBikeStands(available_bike_stands).availableBikes(available_bikes).recordId(recordid).build());
     return ResponseEntity.ok(station);
 }
 
