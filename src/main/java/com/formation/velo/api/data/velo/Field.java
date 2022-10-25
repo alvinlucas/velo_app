@@ -22,7 +22,7 @@ public class Field {
 
     private int number;
 
-    private String aDDress;
+    private String address;
 
     private String name;
 
