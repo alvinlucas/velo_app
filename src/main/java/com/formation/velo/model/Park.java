@@ -20,7 +20,7 @@ public class Park implements Serializable {
 
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private String grpIdentifiant;
+    private Integer id;
 
     private String grpNom;
     
@@ -36,7 +36,7 @@ public class Park implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((grpIdentifiant == null) ? 0 : grpIdentifiant.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((grpNom == null) ? 0 : grpNom.hashCode());
         result = prime * result + grpDisponible;
         result = prime * result + ((latitude == null) ? 0 : latitude.hashCode());
@@ -54,10 +54,10 @@ public class Park implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Park other = (Park) obj;
-        if (grpIdentifiant == null) {
-            if (other.grpIdentifiant != null)
+        if (id == null) {
+            if (other.id != null)
                 return false;
-        } else if (!grpIdentifiant.equals(other.grpIdentifiant))
+        } else if (!id.equals(other.id))
             return false;
         if (grpNom == null) {
             if (other.grpNom != null)
@@ -83,5 +83,6 @@ public class Park implements Serializable {
             return false;
         return true;
     }
+
     
 }

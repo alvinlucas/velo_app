@@ -2,7 +2,6 @@
 package com.formation.velo.service.impl;
 
 import com.formation.velo.model.Park;
-import com.formation.velo.api.data.OpenData;
 import com.formation.velo.api.data.park.OpenDataNantesParkClient;
 import com.formation.velo.api.data.park.OpenDataParkingNantes;
 import com.formation.velo.repository.ParkRepository;
@@ -67,6 +66,7 @@ public class ParkServiceImpl implements ParkService {
         try {
 
             OpenDataParkingNantes openDataParkingNantes = openDataParkingNantesCall.execute().body();
+            assert openDataParkingNantes != null;
             System.out.printf("Park to create or update" + openDataParkingNantes.getRecords().length);
 
                        
@@ -79,8 +79,6 @@ public class ParkServiceImpl implements ParkService {
                     parkToUpdate.get()
                     .setGrpDisponible(record.getField().getGrpDisponible());
                     parkToUpdate.get()
-                    .setGrpIdentifiant(record.getField().getGrpIdentifiant());
-                    parkToUpdate.get()
                     .setGrpNom(record.getField().getGrpNom());
                     save(parkToUpdate.get());
                 }else {
@@ -88,7 +86,6 @@ public class ParkServiceImpl implements ParkService {
                     Park newPark = Park.builder()
                             .recordId(record.getRecordId())
                             .grpDisponible(record.getField().getGrpDisponible())
-                            .grpIdentifiant(record.getField().getGrpIdentifiant())
                             .grpNom(record.getField().getGrpNom())
                             .latitude(record.getField().getLocation()[0])
                             .longitude(record.getField().getLocation()[1])
