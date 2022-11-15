@@ -10,7 +10,6 @@ import lombok.Setter;
 @lombok.Data
 public class Field {
 
-    
     @SerializedName("grp_disponible")
     private int grpDisponible;
 

@@ -34,9 +34,9 @@ public class ParkController {
     }
 
     @PostMapping("parks/add")
-    public ResponseEntity<Park> add(@RequestParam Integer grpDisponible, @RequestParam String grpNom, @RequestParam String recordId){
+    public ResponseEntity<Park> add(@RequestParam Integer grpDisponible, @RequestParam String grpNom,@RequestParam Double latitude,@RequestParam Double longitude, @RequestParam String recordId){
 
-        Park park = parkService.save(Park.builder().grpDisponible(grpDisponible).grpNom(grpNom).recordId(recordId).build());
+        Park park = parkService.save(Park.builder().grpDisponible(grpDisponible).grpNom(grpNom).latitude(latitude).longitude(longitude).recordId(recordId).build());
         return ResponseEntity.ok(park);
     }
 
