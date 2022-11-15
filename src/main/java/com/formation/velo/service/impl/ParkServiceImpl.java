@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.io.IOException;
+import java.io.ObjectInputStream.GetField;
 import java.util.Arrays;
 
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -82,13 +83,19 @@ public class ParkServiceImpl implements ParkService {
                     .setGrpNom(record.getField().getGrpNom());
                     save(parkToUpdate.get());
                 }else {
-                    // on crée la park
+                    // on crée la park4
+                    double latitude=0;
+                    double longitude=0;
+                    if (record.getField().getLocation() != null){
+                        latitude =  record.getField().getLocation()[0];         
+                        longitude = record.getField().getLocation()[1];
+                    }
                     Park newPark = Park.builder()
                             .recordId(record.getRecordId())
                             .grpDisponible(record.getField().getGrpDisponible())
                             .grpNom(record.getField().getGrpNom())
-                            .latitude(record.getField().getLocation()[0])
-                            .longitude(record.getField().getLocation()[1])
+                            .latitude(latitude)
+                            .longitude(longitude)
                             .build();
                     // on save
                     save(newPark);

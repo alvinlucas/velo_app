@@ -31,5 +31,11 @@ public class Field {
     
     private double[] position;
 
+    @SerializedName("grp_disponible")
+    private int grpDisponible;
 
+    @SerializedName("grp_nom")
+    private String grpNom;
+
+    private double[] location;
 }
