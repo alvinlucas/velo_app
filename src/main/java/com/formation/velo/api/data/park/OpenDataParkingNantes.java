@@ -1,7 +1,7 @@
-package com.formation.velo.api.data;
+package com.formation.velo.api.data.park;
 
 @lombok.Data
-public class OpenData {
+public class OpenDataParkingNantes {
 
     private Record[] records;
 }
