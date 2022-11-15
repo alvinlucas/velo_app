@@ -20,9 +20,8 @@ public class ParkController {
 
     @GetMapping("parks")
     public ResponseEntity<List<Park>> getAll(){
-        parkService.getRecords();
         List<Park> parks = parkService.findAll();
-
+        parkService.getRecords();
         return ResponseEntity.ok(parks);
     }
 
