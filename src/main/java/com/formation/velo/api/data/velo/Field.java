@@ -18,6 +18,7 @@ public class Field {
     private int availableBikes;
 
     @SerializedName("bike_stands")
+
     private int bikeStands;
 
     private int number;
@@ -26,12 +27,9 @@ public class Field {
 
     private String name;
 
-  //  private String bonus;
-  //  private String banking;
-    //private String contract_name;
-
     private String status;
     
     private double[] position;
-  //  private Date last_update;
+
+
 }
