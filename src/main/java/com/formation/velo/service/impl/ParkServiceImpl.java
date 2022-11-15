@@ -67,8 +67,9 @@ public class ParkServiceImpl implements ParkService {
         try {
 
             OpenDataParkingNantes openDataParkingNantes = openDataParkingNantesCall.execute().body();
-            System.out.printf(openDataParkingNantes.toString());
-           
+            System.out.printf("Park to create or update" + openDataParkingNantes.getRecords().length);
+
+                       
 
             //Save records dans park
             
