@@ -8,3 +8,4 @@ public interface OpenDataNantesParkClient {
     @GET("/api/records/1.0/search/?dataset=244400404_parkings-publics-nantes-disponibilites&q=&facet=grp_nom&facet=grp_statut&rows=126")
     Call<OpenDataParkingNantes> getRecords();
 }
+ 
